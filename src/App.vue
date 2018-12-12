@@ -1,23 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+			<site></site>
+			<index></index>
   </div>
 </template>
 
 <script>
+	import Site from './components/Header'
+	import Index from './pages/index'
 export default {
-  name: 'App'
+  name: 'App',
+  data(){
+  	return {
+  		
+  	}
+  },
+  components: {
+  	Site,
+  	Index
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+	
 </style>
