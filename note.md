@@ -26,3 +26,12 @@
 	给商品li hover时添加红色边框，元素抖动，解决：给li一开始就添加和背景色一样的边框，hover时改变边框颜色
 	还有近期热销模块，这个模块是新建hotSell.vue单独写的，往index.vue引入时提示<hotsell></hotsell>没有注册，原因：引入时使用的大驼峰HotSell，在
 复制了淘宝reset文件重置css样式标签中使用应该使用‘-’形式<hot-sell></hot-sell>而不是<hotsell></hotsell>
+
+
+
+
+git add .
+git commit -m 'msg'
+git checkout master
+git merge mybranch
+
