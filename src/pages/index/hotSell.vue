@@ -129,7 +129,7 @@
 							line-height: 30px;
 							margin-left: 16px;
 							font-size: 16px;
-							color: #000;
+							color: #333;
 							cursor: pointer;
 						}
 						.detailEntry:hover{
@@ -171,9 +171,11 @@
 							font-size: 14px;
 							cursor: pointer;
 							height: 22px;
+							line-height: 30px;
 							white-space: nowrap;
 							text-overflow: ellipsis;
 							overflow: hidden;
+							color: #333;
 						}
 						p:hover{
 							text-decoration: underline;

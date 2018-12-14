@@ -31,6 +31,9 @@
 			<hot-sell :lists="goodsItem"></hot-sell>
 			<notice></notice>
 		</div>
+		<div class="footer">
+			<img src="../../../static/wx.jpg"/>
+		</div>
 	</div>
 </template>
 
@@ -190,6 +193,18 @@
 					}
 				}
 			}
+		}
+	}
+	.footer{
+		width: 100%;
+		height: 120px;
+		background: #f00;
+		text-align: center;
+		line-height: 120px;
+		img{
+			height: 100px;
+			display: inline-block; 
+			vertical-align: middle;
 		}
 	}
 </style>
