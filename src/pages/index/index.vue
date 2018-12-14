@@ -28,7 +28,8 @@
 					</ul>
 				</div>
 			</div>
-			<hot-sell></hot-sell>
+			<hot-sell :lists="goodsItem"></hot-sell>
+			<notice></notice>
 		</div>
 	</div>
 </template>
@@ -36,10 +37,12 @@
 <script>
 	import BScroll from 'better-scroll' 
 	import HotSell from './hotSell' 
+	import Notice from './notice' 
 	export default{
 		name: 'index',
 		components: {
-			HotSell
+			HotSell,
+			Notice
 		},
 		data(){
 			return {

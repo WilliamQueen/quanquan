@@ -34,4 +34,4 @@ git add .
 git commit -m 'msg'
 git checkout master
 git merge mybranch
-
+git push origin master
