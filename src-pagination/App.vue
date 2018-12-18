@@ -21,7 +21,6 @@
 			<!--  header end  -->
 			<index v-show="currentIndex == 0"></index>
 			<women v-show="currentIndex == 1"></women>
-			<back-top></back-top>
 			<!--  footer start  -->
 			<div class="footer">
 				<img src="static/wx.jpg"/>
@@ -33,7 +32,6 @@
 <script>
 	import Index from './pages/index/index'
 	import Women from './pages/women/index'
-	import BackTop from './components/backTop'
 export default {
   name: 'App',
   data(){
@@ -56,8 +54,7 @@ export default {
   },
   components: {
   	Index,
-  	Women,
-  	BackTop
+  	Women
   }
 }
 </script>

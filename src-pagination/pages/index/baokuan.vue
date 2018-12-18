@@ -1,61 +1,71 @@
 <template>
-	<div id="index">
-		<div class="mainBox">
-			<div id="shouye">
-				<baokuan></baokuan>
-				<hot-sell></hot-sell>
-				<notice></notice>
+	<div id="baokuan">
+		<div class="bodyBox">
+			<div class="goodsClass">
+				<div class="hotBuy">爆款<img src="../../assets/images/icon/rexiao.png" alt="" /></div>
+				<a href="#">更多 >></a>
+			</div>
+			<div class="goodsWrapper" ref="wrapper">
+				<ul class="goodsContent">
+					<li v-for="item in goodsItem" :key="item.id">
+						<img class="goodsImg" :src="item.ImgUrl"/>
+						<div class="curtailInfo">
+							<p class="goodsTitle"><a href=":;javascript">{{item.GoodsName}}</a></p>
+							<div class="goodsPrice">
+								<div class="LastPriceBox">
+									<img src="../../assets/images/icon/quanhoujia.png"/>
+									<p class="goodsLastPrice">￥<span>{{item.LastPrice}}</span></p>
+								</div>
+								<p class="goodsBeforPrice">原价：￥<span>{{item.GoodsPrice}}</span></p>
+							</div>
+						</div>
+						<!--优惠券图片-->
+						<div class="yhqbg">
+							<a class="jumpOutside" target="_blank" :href="item.ActLink"><p class="yhPrice">{{item.ActMoney}}</p></a>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
-		
 	</div>
 </template>
 
 <script>
-	import Baokuan from './Baokuan' 
-	import HotSell from './hotSell' 
-	import Notice from './notice' 
+	import BScroll from 'better-scroll' 
+	
 	export default{
-		name: 'index',
-		components: {
-			Baokuan,
-			HotSell,
-			Notice
-		},
+		name: 'baokuan',
 		data(){
 			return {
-				currentIndex: 0,
-				navLists: [
-					{id: 1, title: '首页'},
-					{id: 2, title: '女装'},
-					{id: 3, title: '男装'},
-					{id: 4, title: '内衣'},
-					{id: 5, title: '母婴'},
-					{id: 6, title: '化妆品'},
-					{id: 7, title: '居家'},
-					{id: 8, title: '美食'},
-					{id: 9, title: '鞋包配饰'},
-					{id: 10, title: '数码家电'},
-					{id: 11, title: '文体车品'}
-				]
+				goodsItem: []
 			}
 		},
 		created() {
-			
+			this.$axios({
+				method: 'GET',
+				url: 'http://api.xuandan.com/DataApi/PyqGoods?AppKey=hveo9k3frc&type=2',
+			}).then(function(res){
+				var data = res.data.data
+				this.goodsItem = data.slice(0,10)
+//				console.log(this.goodsItem)
+			}.bind(this)).catch(function(err){
+				console.log(err)
+			})
 		},
 		mounted() {
-			
+//		    this.getSingerData()
+			this.$nextTick(() => {
+		        let bscrollDom = this.$refs.wrapper;
+		        this.aBscroll = new BScroll(bscrollDom,{
+		        	click: true,
+		        	scrollX: true
+		        })
+		    })
 		}
 	}
 </script>
 
-<style lang="scss">
-	
-	
-	.mainBox{
-		width: 90%;
-		margin: 0 auto;
-	}
+<style>
 	.bodyBox{
 		margin-top: 10px;
 		overflow:hidden;

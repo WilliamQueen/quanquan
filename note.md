@@ -27,8 +27,14 @@
 	还有近期热销模块，这个模块是新建hotSell.vue单独写的，往index.vue引入时提示<hotsell></hotsell>没有注册，原因：引入时使用的大驼峰HotSell，在
 复制了淘宝reset文件重置css样式标签中使用应该使用‘-’形式<hot-sell></hot-sell>而不是<hotsell></hotsell>
 
-开发明日预告模块下面想显示优惠券剩余,刚开始设置z-index无效，后来又给需要z-index的元素添加了position:absolute才有效.接着又有一个问题，移入li（父元素）让剩余优惠券（子元素）显示，
+开发明日预告模块下面想在鼠标移入时显示优惠券剩余,刚开始设置z-index无效，后来又给需要z-index的元素添加了position:absolute才有效.接着又有一个问题，移入li（父元素）让剩余优惠券（子元素）显示，
 一开始使用vue的v-if ，定义初始数据，发现不行，最后还是使用的css：hover方法（fu:hover zi{...这样可以控制子元素的样式}）
+明日预告倒计时还没有写出来！！！！！！！！！！！！
+
+女装模块基本完成，首页内容和女装内容切换使用的v-show如果当前点击的li的下标等于0就显示首页，如果是1显示女装页，其他模块以此类推。底部分页按钮参考：https://www.cnblogs.com/yuqing6/p/7061647.html 中的demo
+自己又加了当点击页数时回到顶部功能在setCurrent方法中添加了：document.documentElement.scrollTop = document.body.scrollTop = 0
+
+
 
 
 
