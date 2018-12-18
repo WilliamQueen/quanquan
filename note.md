@@ -34,14 +34,19 @@
 女装模块基本完成，首页内容和女装内容切换使用的v-show如果当前点击的li的下标等于0就显示首页，如果是1显示女装页，其他模块以此类推。底部分页按钮参考：https://www.cnblogs.com/yuqing6/p/7061647.html 中的demo
 自己又加了当点击页数时回到顶部功能在setCurrent方法中添加了：document.documentElement.scrollTop = document.body.scrollTop = 0
 
+图片没加载之前显示的图片
 
 
 
 
-
-
+mybranch-----
 git add .
 git commit -m 'msg'
 git checkout master
 git merge mybranch
 git push origin master
+
+master-------
+git add .
+git commit -m ''
+

@@ -1,19 +1,19 @@
 <template>
   <nav>
     <ul class="pagination">
-      <li :class="{'disabled': current == 1}">
+      <li>
       	<a class="direction" href="javascript:;" @click="setCurrent(current - 1)"> « </a>
       </li>
-      <li :class="{'disabled': current == 1}">
+      <li>
       	<a href="javascript:;" @click="setCurrent(1)"> 首页 </a>
       </li>
       <li v-for="p in grouplist" :class="{'active': current == p.val}">
       	<a href="javascript:;" @click="setCurrent(p.val)"> {{ p.text }} </a>
       </li>
-      <li :class="{'disabled': current == page}">
+      <li>
       	<a href="javascript:;" @click="setCurrent(page)"> 尾页 </a>
       </li>
-      <li :class="{'disabled': current == page}">
+      <li>
       	<a class="direction" href="javascript:;" @click="setCurrent(current + 1)"> »</a>
       </li>
     </ul>

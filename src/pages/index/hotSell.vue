@@ -63,7 +63,7 @@
 				var data = res.data.data
 				this.goodslist = data.slice(2,17)
 				this.leftBigGood = data.slice(0,2)
-				console.log(this.leftBigGood)
+//				console.log(this.leftBigGood)
 			}.bind(this)).catch(function(err){
 				console.log(err)
 			})

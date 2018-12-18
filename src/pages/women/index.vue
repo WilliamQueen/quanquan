@@ -1,5 +1,6 @@
 <template>
 	<div class="womenBox">
+{{page}}		
 		<div class="womensWearGoods">
 			<ul>
 				<li v-for="(i,index) in goodsItem">
@@ -40,18 +41,25 @@
 		components:{
 			Pagination
 		},
+		props: {
+			navId: {// app.vue传过来的导航下标
+		        type: Number
+		    }
+		},
 		data(){
 			return{
 				goodsItem: [],
 				total: 150,     // 记录总条数
 		        display: 10,   // 每页显示条数
 		        current: 1,   // 当前的页数
+		        page: 0
 			}
 		},
 		created() {
+			this.page = this.navId
 			this.$axios({
 				method: 'GET',
-				url: 'http://api.xuandan.com/DataApi/index?AppKey=hveo9k3frc&page=1&cid=1',
+				url: 'http://api.xuandan.com/DataApi/index?AppKey=hveo9k3frc&page='+ this.page +'&cid=1',
 			}).then(function(res){
 				var data = res.data.data
 				this.goodsItem = data
@@ -62,11 +70,11 @@
 		},
 		methods: {
 			pagechange:function(currentPage){
-		        console.log(currentPage);
+//		        console.log(currentPage);
 		        // ajax请求, 向后台发送 currentPage, 来获取对应的数据
 				this.$axios({
 					method: 'GET',
-					url: 'http://api.xuandan.com/DataApi/index?AppKey=hveo9k3frc&page='+ currentPage +'&cid=1',
+					url: 'http://api.xuandan.com/DataApi/index?AppKey=hveo9k3frc&page='+ this.page +'&cid=1',
 				}).then(function(res){
 					var data = res.data.data
 					this.goodsItem = data

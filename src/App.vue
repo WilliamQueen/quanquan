@@ -20,7 +20,7 @@
 			</div>
 			<!--  header end  -->
 			<index v-show="currentIndex == 0"></index>
-			<women v-show="currentIndex == 1"></women>
+			<women :navId="currentIndex" v-show="currentIndex !== 0"></women>
 			<back-top></back-top>
 			<!--  footer start  -->
 			<div class="footer">
@@ -47,10 +47,10 @@ export default {
 					{id: 5, title: '母婴'},
 					{id: 6, title: '化妆品'},
 					{id: 7, title: '居家'},
-					{id: 8, title: '美食'},
-					{id: 9, title: '鞋包配饰'},
-					{id: 10, title: '数码家电'},
-					{id: 11, title: '文体车品'}
+					{id: 8, title: '鞋包配饰'},
+					{id: 9, title: '美食'},
+					{id: 10, title: '文体车品'},
+					{id: 11, title: '数码家电'}
 				]
   	}
   },
